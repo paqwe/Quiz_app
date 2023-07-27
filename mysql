@@ -1,0 +1,83 @@
+prashanta@prashanta-VivoBook-ASUSLaptop-X415JA-X415JA:~$ $> sudo mysql -u root -p
+$: command not found
+prashanta@prashanta-VivoBook-ASUSLaptop-X415JA-X415JA:~$ sudo mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.33-0ubuntu0.22.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show database
+    -> 
+    -> ^C
+mysql> show dbs
+    -> ^C
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| studentA           |
+| sys                |
+| youtube            |
++--------------------+
+7 rows in set (0.05 sec)
+
+mysql> create database question ;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| question           |
+| studentA           |
+| sys                |
+| youtube            |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use question ;
+Database changed
+mysql> create table quest_table(id int(10) auto_increment primary key , question varchar(200), subject varchar(200), answer varchar(200));
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_question |
++--------------------+
+| quest_table        |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> desc quest_table;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| question | varchar(200) | YES  |     | NULL    |                |
+| subject  | varchar(200) | YES  |     | NULL    |                |
+| answer   | varchar(200) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.05 sec)
+
+mysql> select * from quest_table;
+Empty set (0.03 sec)
+
+mysql> 
+
+
